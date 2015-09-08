@@ -11,9 +11,8 @@ package edu.elon.test;
 import java.text.NumberFormat;
 
 /**
- * Class exercise to work with JUnit to properly handle an exception.
- * Note: this code is intentionally incorrect so you can fix it during
- * testing.
+ * Class exercise to work with JUnit to properly handle an exception. Note: this
+ * code is intentionally incorrect so you can fix it during testing.
  * 
  * @author dpowell2
  * @version 1.0
@@ -35,8 +34,8 @@ public class ATM {
   }
 
   /**
-   * Constructor takes a positive value to set the initial balance of
-   * the instance.
+   * Constructor takes a positive value to set the initial balance of the
+   * instance.
    * 
    * @param balance non negative amount of money to deposit
    */
@@ -50,8 +49,7 @@ public class ATM {
    * Adds a non negative deposit amount to the account balance.
    * 
    * @param amount a positive value for money to be deposited
-   * @throws IllegalArgumentException if requested deposit is less
-   *         then 0
+   * @throws IllegalArgumentException if requested deposit is less then 0
    */
   public void deposit(double amount) throws IllegalArgumentException {
     if (amount < 0.0) {
@@ -65,9 +63,8 @@ public class ATM {
   /**
    * Gets current amount of money in user account.
    * 
-   * @return a double value representing money in the account
-   *         available for withdrawal. The balance is guarenteed to
-   *         always be >= 0.
+   * @return a double value representing money in the account available for
+   *         withdrawal. The balance is guarenteed to always be >= 0.
    */
   public double getBalance() {
     return balance;
@@ -86,17 +83,16 @@ public class ATM {
   }
 
   /**
-   * withdraw requested <code>amount</code>from user balance. Throw an
-   * exception if the user does not have the balance to cover the
-   * withdrawal.
+   * withdraw requested <code>amount</code>from user balance. Throw an exception
+   * if the user does not have the balance to cover the withdrawal.
    * 
    * @param amount double value that is >= current balance
    * @return double value of amount actually withdrawn
-   * @throws IllegalArgumentException if request withdraw amount is
-   *         less than the amount currently in account balance.
+   * @throws IllegalArgumentException if request withdraw amount is less than
+   *           the amount currently in account balance.
    */
   public double withdraw(double amount) throws IllegalArgumentException {
-    if ((amount < 0) || (amount < balance)) {
+    if ((amount < 0) || (amount > balance)) {
       throw new IllegalArgumentException("Invalid withdrawal");
     } else {
       balance = balance - amount;
